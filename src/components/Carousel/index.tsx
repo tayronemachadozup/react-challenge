@@ -25,3 +25,6 @@ const Carousel: FC  = () =>{
 }
 
 export default Carousel;
+
+
+//folder.map((folder,index)=>(<CarouselFolder> <Folder src={IMG_URL + folder.poster_path} >  </CarouselFolder>))

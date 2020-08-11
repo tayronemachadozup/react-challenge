@@ -20,6 +20,8 @@ export const MenuItem = styled.li`
   list-style: none;
   display: inline-block; 
   padding: 5px;  
+  text-decoration: none;
+  color: #ffffff
 `
 
 export const Search = styled.div`
