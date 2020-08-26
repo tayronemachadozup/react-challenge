@@ -2,42 +2,33 @@ import React, {FC, useEffect, useState} from 'react';
 import {Title} from './styled'
 import Carousel from '../../components/Carousel/index';
 import MovieList from '../../components/MovieList';
-import {getMovies} from '../../core/services/index';
-//import {indexCarousel} from '../../components/Carousel/carouselFolders'
+import {indexCarousel} from '../../components/Carousel/carouselFolders';
 
 const Home: FC = () => {
     
-    const [movies, setMovies] = useState([] as any[]);
-    //const [folder, setFolders] = useState([] as any[]);
+    const [folder, setFolders] = useState([] as any[]);
     
-    async function handleRequest() {
-        const request = await getMovies('/tv/on_the_air');
-        setMovies(request.data.results);
-    }
-
-    //setFolders(indexCarousel); 
-    //console.log(folder);
-
     useEffect(()=>{
-        handleRequest();
-    })
+        setFolders(indexCarousel);
+       
+    },[])
 
     
     return (
         <>
-            <Carousel/>
+            <Carousel folder={folder}/>
             <Title>Assista a seguir</Title>
-            <MovieList movies={movies}/>
+            <MovieList  path={'/search/trending?'}/>
             <Title>Séries Amazon Originals e exclusivas</Title>
-            <MovieList movies={movies}/>
+            <MovieList  path={'/tv/on_the_air?'}/>
             <Title>Filmes que achamos que você vai curtir</Title>
-            <MovieList movies={movies}/>
+            <MovieList  path={'/movie/upcoming?'}/>
             <Title>Filmes adicionados recentemente</Title>
-            <MovieList movies={movies}/>
+            <MovieList  path={'/movie/popular?'}/>
             <Title>Filmes de suspense</Title>
-            <MovieList movies={movies}/>
+            <MovieList  path={'/discover/movie?with_genres=18&'}/>
             <Title>Séries adicionadas recentemente</Title>
-            <MovieList movies={movies}/>
+            <MovieList  path={'/tv/airing_today?'}/>
 
         </>
     ); 

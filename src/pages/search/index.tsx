@@ -1,11 +1,36 @@
-import React, {FC} from 'react';
+import React, {FC, useState, useEffect} from 'react';
+import {SearchList, SearchInfo, Button, SearchResults, ResultList, ListItem} from './styled'
+
 
 
 const Search:FC = ()=>{
+
+
+    
     return(
-        <h1>Search</h1>
+        <>
+            <SearchList>
+                <SearchInfo>
+                    <Button>Refinar</Button>
+                </SearchInfo>
+            </SearchList>
+
+            <SearchResults>
+                <ResultList>
+                    <ListItem>x</ListItem>
+                    <ListItem>x</ListItem>
+                    <ListItem>x</ListItem>
+                    <ListItem>x</ListItem>
+                    <ListItem>x</ListItem>
+                    <ListItem>x</ListItem>
+                    <ListItem>x</ListItem>
+                    <ListItem>x</ListItem>
+                    <ListItem>x</ListItem>
+                </ResultList>
+            </SearchResults>
+        </>
     );
 
 }
 
-export default Search;
+export default Search; 

@@ -1,12 +1,15 @@
 import React, {FC} from 'react';
-import Movie1 from '../../core/assets/folder.jpg'
-import {CarouselContent, CarouselList, CarouselFolder, Folder, Next, Prev} from './styled'
+//import Movie1 from '../../core/assets/folder.jpg'
+import {CarouselContent, CarouselList, CarouselFolder, Folder, Next, Prev} from './styled';
+
+interface Folders {
+    folder:Record<string, string>[];
+}
 
 
+const Carousel: FC<Folders>= (props) =>{
 
-const Carousel: FC  = () =>{
-    
-    //const {folder} = props;
+    const {folder} = props;
     const IMG_URL = 'https://image.tmdb.org/t/p/w1920_and_h600_multi_faces';
         
     return (
@@ -14,11 +17,9 @@ const Carousel: FC  = () =>{
             <Prev></Prev>
             
             <CarouselList>
-                <CarouselFolder> <Folder src={Movie1} alt="movie-folder"/>  </CarouselFolder>
-                <CarouselFolder> <Folder src={Movie1} alt="movie-folder"/>  </CarouselFolder>
-                <CarouselFolder> <Folder src={Movie1} alt="movie-folder"/>  </CarouselFolder>
+               {folder&&folder.map( folder=>(<CarouselFolder key={folder.poster_path}><Folder src={IMG_URL + folder.poster_path}/></CarouselFolder>))}
             </CarouselList>
-            
+
             <Next></Next>
         </CarouselContent>
     );
@@ -26,5 +27,9 @@ const Carousel: FC  = () =>{
 
 export default Carousel;
 
+
+//eslint
+
+// {movies && movies.map((movie, index)=>(<ListItem poster={movie.poster_path} key={index} />))}   
 
 //folder.map((folder,index)=>(<CarouselFolder> <Folder src={IMG_URL + folder.poster_path} >  </CarouselFolder>))

@@ -1,20 +1,31 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {Row, Content, List} from './styled'
 import ListItem from '../ListIIem/index'
+import {getMovies} from '../../core/services/index';
 
 interface Movies {
-    movies:any[];
+    path:string;
 }
 
-const MovieList: FC <Movies>= (props) =>{
-    const {movies} = props;
-    //console.log('Movies List: ', movies);
-  
+const MovieList: FC <Movies>= ({path}) =>{
+    
+    const [movies, setMovies] = useState([] as any[]);
+
+    async function handleRequest() {
+        const request = await getMovies(path);
+        console.log(request);
+        setMovies(request.data.results);
+    }
+
+    useEffect(()=>{
+        handleRequest();
+    },[])
+
     return (
         <Row>
             <Content>
                 <List>
-                    {movies && movies.map((movie, index)=>(<ListItem poster={movie.poster_path} key={index} />))}                
+                    {movies && movies.map( movie =>(<ListItem poster={movie.poster_path} key={movie.id} />))}                
                 </List>
             </Content>
         </Row>

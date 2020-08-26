@@ -29,7 +29,7 @@ export const Search = styled.div`
   margin-right: 30px;
 `
 export const SearchInput = styled.input`
-  width: 85%;
+  width: 90%;
   border:none;
   outline: none;
   padding: 10px;

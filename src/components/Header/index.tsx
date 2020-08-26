@@ -1,9 +1,19 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../core/assets/prime-brand.png';
 import {Nav, Menu, MenuItem, Search, SearchInput, UserMenu} from './styled';
 
+
+
 const Header: FC = () =>{
+    const [searchValue, setSearchValue] = useState('');
+    
+//    const handleSubmit = (e) =>{
+//        e.prevantDefault();
+//        console.log(searchValue);
+//    }
+
+
     return(
         <Nav>
             <img src={Logo} alt="amazon-brand"/>
@@ -14,7 +24,7 @@ const Header: FC = () =>{
                <Link to="/childish"><MenuItem>Infantil</MenuItem></Link>
             </Menu>
             <Search>
-                <SearchInput placeholder="Busca"></SearchInput>
+                <SearchInput placeholder="Busca" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}></SearchInput>
             </Search>
             <UserMenu></UserMenu>
         </Nav>
