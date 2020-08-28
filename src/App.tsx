@@ -1,31 +1,29 @@
-import React from 'react';
-import Home from './pages/home';
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Home from './pages/home'
 import Movies from './pages/movies'
 import Series from './pages/series'
 import Childish from './pages/childish'
 import Search from './pages/search'
-import GlobalStyle from './components/commons.styled';
-import Header from './components/Header/index';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
-
+import GlobalStyle from './components/commons.styled'
+import Header from './components/Header/index'
 
 function App() {
   return (
     <Router>
       <main className="App">
-        <GlobalStyle/>            
-        <Header/>
+        <GlobalStyle />
+        <Header />
         <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/movies" component={Movies}/>
-          <Route path="/series" component={Series}/>
-          <Route path="/childish" component={Childish}/>
-          <Route path="/search" component={Search}/>
+          <Route path="/" exact component={Home} />
+          <Route path="/movies" component={Movies} />
+          <Route path="/series" component={Series} />
+          <Route path="/childish" component={Childish} />
+          <Route path="/search" component={Search} />
         </Switch>
       </main>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

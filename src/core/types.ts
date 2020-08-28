@@ -1,3 +1,3 @@
 export interface Movie {
-    poster:string
+  poster:string,
 }

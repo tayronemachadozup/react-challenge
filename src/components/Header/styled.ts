@@ -1,9 +1,7 @@
-import styled from 'styled-components';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Nav = styled.nav`
- 
   min-height: 70px;
   background-color: #1a232e;
   display: flex;
@@ -31,7 +29,7 @@ export const Search = styled.div`
   margin-right: 30px;
 `
 export const SearchInput = styled.input`
-  width: 90%;
+  width: 250px;
   border:none;
   outline: none;
   padding: 6px;
@@ -52,4 +50,11 @@ export const UserMenu = styled.div`
   color: #bbbdc0;
   margin-right: 30px;
 `
-  
+export const SearchIcon = styled(FontAwesomeIcon)`
+    color:#e6e6e6;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    margin: 0px 10px;
+    
+  `

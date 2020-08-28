@@ -1,14 +1,11 @@
-import styled from 'styled-components';
-import Search from './index';
-
-
+import styled from 'styled-components'
+import Search from './index'
 
 export const SearchList = styled.div`
     width: 98%;
     margin: 0 auto;
 
 `
-
 
 export const SearchInfo = styled.div`
     width: 100%;

@@ -1,11 +1,10 @@
-import styled from 'styled-components';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from 'styled-components'
 
 export const CarouselContent = styled.div`
-  
     width: 100%;
     position: relative;
-    
+    overflow: hidden;
+   
     
 `
 export const CarouselList = styled.ul`
@@ -13,7 +12,8 @@ export const CarouselList = styled.ul`
     list-style: none;
     
     @media(min-width: 1024px) {
-        width:80%;
+        margin:0 auto;
+        width:90%;  
     }
 
 `
@@ -30,32 +30,4 @@ export const CarouselFolder = styled.li`
 export const Folder = styled.img`
     width:1550px;
     height:300px;
-`
-
-export const Next = styled.div`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    padding: 0px 10px 0px 10px;
-    color: #ffff;
-    cursor: pointer;
-`
-
-export const Prev = styled.div`
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    padding: 0px 10px 0px 10px;
-    color: #ffff;
-    cursor: pointer;
 `
