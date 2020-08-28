@@ -1,7 +1,11 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Row, Content, List} from './styled'
 import ListItem from '../ListIIem/index'
 import {getMovies} from '../../core/services/index';
+import {
+    Row, 
+    Content, 
+    List
+} from './styled'
 
 interface Movies {
     path:string;
@@ -31,7 +35,6 @@ const MovieList: FC <Movies>= ({path}) =>{
         </Row>
     );
 }
-
 
 
 export default MovieList;

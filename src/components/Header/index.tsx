@@ -1,8 +1,16 @@
 import React, {FC, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../core/assets/prime-brand.png';
-import {Nav, Menu, MenuItem, Search, SearchInput, UserMenu} from './styled';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import {
+    Nav, 
+    Menu, 
+    MenuItem, 
+    Search, 
+    SearchInput, 
+    UserMenu
+} from './styled';
 
 
 const Header: FC = () =>{
@@ -12,7 +20,6 @@ const Header: FC = () =>{
 //        e.prevantDefault();
 //        console.log(searchValue);
 //    }
-
 
     return(
         <Nav>
@@ -25,6 +32,7 @@ const Header: FC = () =>{
             </Menu>
             <Search>
                 <SearchInput placeholder="Busca" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}></SearchInput>
+                <FontAwesomeIcon icon={faSearch} />
             </Search>
             <UserMenu></UserMenu>
         </Nav>

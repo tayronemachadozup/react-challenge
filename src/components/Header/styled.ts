@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export const Nav = styled.nav`
  
@@ -32,7 +34,7 @@ export const SearchInput = styled.input`
   width: 90%;
   border:none;
   outline: none;
-  padding: 10px;
+  padding: 6px;
   padding-left: 40px;
   border: 1px solid #c9d9dd;
   color: #ffff;
@@ -51,4 +53,3 @@ export const UserMenu = styled.div`
   margin-right: 30px;
 `
   
-

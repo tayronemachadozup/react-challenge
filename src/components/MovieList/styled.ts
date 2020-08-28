@@ -16,7 +16,6 @@ export const List = styled.ul`
     list-style: none;
     display: flex;
     overflow-x: scroll;
-    
     white-space: wrap;
 
 `

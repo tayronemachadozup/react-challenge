@@ -1,12 +1,8 @@
-import React, {FC, useState, useEffect} from 'react';
+import React, {FC} from 'react';
 import {SearchList, SearchInfo, Button, SearchResults, ResultList, ListItem} from './styled'
-
-
 
 const Search:FC = ()=>{
 
-
-    
     return(
         <>
             <SearchList>
