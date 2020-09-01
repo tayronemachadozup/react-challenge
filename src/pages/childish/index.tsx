@@ -4,7 +4,7 @@ import Carousel from '../../components/Carousel/index'
 import MovieList from '../../components/MovieList'
 import { childishCarousel } from '../../components/Carousel/carouselFolders'
 
-const Childish:FC = () => {
+const Childish: FC = () => {
   const [folder, setFolder] = useState([] as any[])
 
   useEffect(() => {

@@ -19,7 +19,6 @@ const MovieList: FC<Movies> = ({ path }) => {
 
   async function handleRequest() {
     const request = await getMovies(path)
-    console.log(request)
     setMovies(request.data.results)
   }
 

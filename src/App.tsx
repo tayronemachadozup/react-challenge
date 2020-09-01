@@ -19,7 +19,7 @@ function App() {
           <Route path="/movies" component={Movies} />
           <Route path="/series" component={Series} />
           <Route path="/childish" component={Childish} />
-          <Route path="/search" component={Search} />
+          <Route path="/search/:search" component={Search} />
         </Switch>
       </main>
     </Router>
