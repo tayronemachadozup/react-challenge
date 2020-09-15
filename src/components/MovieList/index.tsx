@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect, useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import ListItem from '../ListIIem/index'
@@ -13,10 +13,11 @@ import {
 interface Movies {
     path: string,
 }
-
+ 
 const MovieList: FC<Movies> = ({ path }) => {
   const [movies, setMovies] = useState([] as any[])
-
+  const elementRef = useRef() as React.MutableRefObject<HTMLDivElement>
+   
   async function handleRequest() {
     const request = await getMovies(path)
     setMovies(request.data.results)
@@ -26,17 +27,24 @@ const MovieList: FC<Movies> = ({ path }) => {
     handleRequest()
   }, [])
 
+  const scrollNext = () =>{
+    elementRef.current.scrollLeft += 1100
+  }
+  const scrollPrev = () =>{
+    elementRef.current.scrollLeft -= 1100 
+  }
   return (
+
     <Row>
-      <Prev><FontAwesomeIcon icon={faAngleLeft} /></Prev>
+      <Prev onClick={ scrollPrev }><FontAwesomeIcon icon={faAngleLeft} /></Prev>
       <Content>
-        <List>
+        <List ref={elementRef}>
           {movies && movies.map((movie) => (
             <ListItem poster={movie.poster_path} key={movie.id} />)
           )}
         </List>
       </Content>
-      <Next><FontAwesomeIcon icon={faAngleRight} /></Next>
+      <Next onClick={ scrollNext }><FontAwesomeIcon icon={faAngleRight} /></Next>
     </Row>
   )
 }

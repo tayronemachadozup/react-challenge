@@ -12,11 +12,10 @@ import {
 
 const Search: FC = () => {
   const [content, setContent] = useState([] as any[])
-  const params: string = useParams() 
-
-
+  const value: string = useParams() 
+  
   async function handleRequest() {
-    const request = await getSearchValue(params)
+    const request = await getSearchValue('')
     console.log(request)
     setContent(request.data.results)
   }

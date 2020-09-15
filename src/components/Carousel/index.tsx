@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { Next, Prev } from '../commons.styled'
@@ -16,12 +16,10 @@ interface Folders {
 const Carousel: FC<Folders> = (props) => {
   const { folder } = props
   const IMG_URL = 'https://image.tmdb.org/t/p/w1920_and_h600_multi_faces'
-
+   
   return (
     <CarouselContent>
-      <Prev>
-        <FontAwesomeIcon icon={faAngleLeft} />
-      </Prev>
+      <Prev><FontAwesomeIcon icon={faAngleLeft} /> </Prev>
       <CarouselList>
         {folder && folder.map((folder) => (
           <CarouselFolder key={folder.poster_path}> 
@@ -29,9 +27,7 @@ const Carousel: FC<Folders> = (props) => {
           </CarouselFolder>)
         )}
       </CarouselList>
-      <Next>
-        <FontAwesomeIcon icon={faAngleRight} />
-      </Next>
+      <Next><FontAwesomeIcon icon={faAngleRight} /></Next>
     </CarouselContent>
   )
 }

@@ -15,8 +15,8 @@ export const Content = styled.section`
 export const List = styled.ul`
   list-style: none;
   display: flex;
-  overflow-x: scroll;
-  white-space: wrap;
-
+  overflow-x: hidden;
+  transform:translateX(5px);
+  transition: transform .5s ease;
 `
 // overflow-x: hidden;

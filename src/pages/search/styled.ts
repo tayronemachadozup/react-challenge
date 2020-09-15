@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Search from './index'
 
 export const SearchList = styled.div`
     width: 98%;
